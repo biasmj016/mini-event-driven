@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: producer-service
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        output-out-0:
+          destination: example-topic
+
+server:
+  port: 8080
