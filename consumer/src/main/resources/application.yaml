@@ -1,0 +1,22 @@
+# src/main/resources/application.yml
+spring:
+  application:
+    name: consumer-service
+
+  cloud:
+    function:
+      definition: input
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        input-in-0:
+          destination: example-topic
+          group: my-consumer-group
+      default:
+        consumer:
+          auto-offset-reset: earliest
+
+server:
+  port: 8081
